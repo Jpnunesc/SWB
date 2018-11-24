@@ -1,0 +1,36 @@
+<h1>Lista de Contatos</h1>
+<button type="button" class="btn btn-primary" [routerLink]='["/cadastrar-contato"]'>Cadastrar</button>
+<button type="button" class="btn btn-warning" (click)="Exportar()">Exportar</button>
+<p></p>
+<div class="alert alert-danger" *ngIf="errorExport">
+    <strong>{{msg}}</strong><a href="#" class="alert-link"></a>.
+  </div>
+  <p></p>
+  <p></p>
+<div class="alert alert-success" *ngIf="sucesso">
+    <strong>{{msg}}</strong><a href="#" class="alert-link"></a>.
+  </div>
+  <p></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="row">#</th>
+            <th scope="col">Contato</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Empresa</th>
+            <th scope="col">Area</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cont of contatos">
+            <th scope="row">#</th>
+            <td>{{ cont.nomeUsuario }}</td>
+            <td>{{ cont.telefone }}</td>
+            <td>{{ cont.nome }}</td>
+            <td>{{ cont.area }}</td>
+            <button type="button" class="btn btn-info" [routerLink]='["/editar-contato/",cont.id]'>Editar</button>
+            <button type="button" class="btn btn-danger" (click)="excluir(cont.id)">excluir</button>
+        </tr>
+    </tbody>
+</table>

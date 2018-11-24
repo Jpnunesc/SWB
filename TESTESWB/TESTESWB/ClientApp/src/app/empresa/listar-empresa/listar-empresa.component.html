@@ -1,0 +1,22 @@
+<h1>Lista de Empresas</h1>
+<button type="button" class="btn btn-primary" [routerLink]='["../cadastrar-empresa"]'>Cadastrar</button>
+<button type="button" class="btn btn-warning" (click)="Exportar()">Exportar</button>
+<p></p>
+<div class="alert alert-success" *ngIf="errorExport">
+    <strong>{{msg}}</strong><a href="#" class="alert-link"></a>.
+  </div>
+  <p></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="row">#</th>
+            <th scope="col">Empresa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of Empresa">
+            <th scope="row">#</th>
+            <td>{{ emp.nome }}</td>
+        </tr>
+    </tbody>
+</table>

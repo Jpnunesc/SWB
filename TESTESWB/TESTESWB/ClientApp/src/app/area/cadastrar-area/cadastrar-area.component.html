@@ -1,0 +1,17 @@
+<h1>Cadastro de Area</h1>
+<p></p>
+<button type="button" class="btn btn-primary" (click)="salvar()">Cadastrar</button>
+<button type="button" class="btn btn-success" [routerLink]='["../area"]'>Voltar</button>
+<p></p>
+<div class="alert alert-success" *ngIf="sucesso">
+  <strong>{{msg}}</strong><a href="#" class="alert-link"></a>.
+</div>
+<p></p>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+      </span>
+      <input type="text" class="form-control" name="Nomedocontato" [(ngModel)]="area.area" placeholder="Nome da area" aria-describedby="sizing-addon1">
+    </div>
+  </div>

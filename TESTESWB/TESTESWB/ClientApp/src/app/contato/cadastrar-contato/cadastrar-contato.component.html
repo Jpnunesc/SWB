@@ -1,0 +1,47 @@
+<h1>{{mgsAcao}} de Contatos</h1>
+<p></p>
+<button type="button" class="btn btn-primary" (click)="salvar()">Salvar</button>
+<button *ngIf="edita === false" type="button" class="btn btn-success" [routerLink]='["../contato"]'>Voltar</button>
+<button *ngIf="edita" type="button" class="btn btn-success" [routerLink]='["../../contato"]'>Voltar</button>
+<p></p>
+<div class="alert alert-success" *ngIf="sucesso">
+    <strong>{{msg}}</strong><a href="#" class="alert-link"></a>.
+  </div>
+  <p></p>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+      </span>
+      <input type="text" class="form-control" name="Nomedocontato" [(ngModel)]="contato.nomeUsuario" placeholder="Nome do contato"
+        aria-describedby="sizing-addon1" required>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <p></p>
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+      </span>
+      <input type="number" class="form-control" name="telefone" [(ngModel)]="contato.telefone" placeholder="Telefone" aria-describedby="sizing-addon1" required>
+    </div>
+  </div>
+</div>
+<p></p>
+<div class="form-group">
+  <label for="sel1">Empresa:</label>
+  <select class="form-control" placeholder="Selecione..." name="empresa" [(ngModel)]="contato.idEmpresa" required>
+    <option *ngFor="let emp of empresas" [value]="emp.id">{{emp.nome}}</option>
+  </select>
+</div>
+<p></p>
+<div class="form-group">
+  <label for="sel1">Area:</label>
+  <select class="form-control" placeholder="Selecione..." name="area" [(ngModel)]="contato.idArea" required>
+    <option *ngFor="let ar of areas" [value]="ar.id">{{ar.area}}</option>
+  </select>
+</div>
+<div class="alert alert-danger" *ngIf="mostraMsg">
+    <strong>{{msg}}</strong><a href="#" class="alert-link"></a>.
+  </div>

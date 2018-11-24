@@ -1,0 +1,22 @@
+<h1>Lista de Areas</h1>
+<button type="button" class="btn btn-primary" [routerLink]='["../cadastrar-area"]'>Cadastrar</button>
+<button type="button" class="btn btn-warning" (click)="Exportar()">Exportar</button>
+<p></p>
+<div class="alert alert-success" *ngIf="errorExport">
+    <strong>{{msg}}</strong><a href="#" class="alert-link"></a>.
+  </div>
+  <p></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="row">#</th>
+            <th scope="col">Area</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ar of Areas">
+            <th scope="row">#</th>
+            <td>{{ ar.area }}</td>
+        </tr>
+    </tbody>
+</table>
